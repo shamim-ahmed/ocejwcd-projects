@@ -22,6 +22,7 @@ public class HelloWorldServlet extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
     response.setContentType("text/plain");
+    response.setCharacterEncoding("UTF-8");
     PrintWriter out = response.getWriter();
     int count = Integer.parseInt(getInitParameter("count"));
     
