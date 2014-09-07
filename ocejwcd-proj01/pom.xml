@@ -46,6 +46,7 @@
         <version>2.1.1</version>
         <configuration>
           <failOnMissingWebXml>false</failOnMissingWebXml>
+          <warName>ocejwcd-proj01</warName>
         </configuration>
       </plugin>
       <plugin>

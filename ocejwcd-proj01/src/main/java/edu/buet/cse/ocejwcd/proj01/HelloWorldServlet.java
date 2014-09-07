@@ -26,7 +26,7 @@ public class HelloWorldServlet extends HttpServlet {
     int count = Integer.parseInt(getInitParameter("count"));
     
     for (int i = 0; i < count; i++) {
-      out.println("hello world !!");
+      out.println("hello world !");
     }
     
     out.close();
