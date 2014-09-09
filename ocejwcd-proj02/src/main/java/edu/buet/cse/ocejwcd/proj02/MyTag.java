@@ -6,7 +6,7 @@ import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 /**
- *
+ * A tag handler without any body or attribute
  * @author shamim
  */
 public class MyTag extends SimpleTagSupport {

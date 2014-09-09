@@ -10,4 +10,22 @@
     <body-content>empty</body-content>
   </tag>
   
+  <tag>
+    <name>printBody</name>
+    <tag-class>edu.buet.cse.ocejwcd.proj02.PrintBodyHandler</tag-class>
+    <body-content>tagdependent</body-content>
+    
+    <attribute>
+      <name>start</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    
+    <attribute>
+      <name>end</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
 </taglib>

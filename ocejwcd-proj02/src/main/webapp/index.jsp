@@ -9,5 +9,12 @@
   <body>
     <h1>This is the home page of our application</h1>
     <p><m:myTag /></p>
-  </body>
+    <p>
+      <ul>
+        <m:printBody start="1" end="5">
+          <li>Somewhere over the rainbow....</li>
+        </m:printBody>
+      </ul>
+    </p>
+</body>
 </html>
