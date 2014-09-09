@@ -8,7 +8,7 @@
   <packaging>war</packaging>
 
   <name>ocejwcd-proj02</name>
-  <description>This project demonstrates basic usage of simple tag model</description>
+  <description>This project demonstrates basic usage of simple tag model and tag files</description>
 
   <properties>
     <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
