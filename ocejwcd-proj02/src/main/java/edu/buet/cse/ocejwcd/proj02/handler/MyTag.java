@@ -1,4 +1,4 @@
-package edu.buet.cse.ocejwcd.proj02;
+package edu.buet.cse.ocejwcd.proj02.handler;
 
 import java.io.IOException;
 import javax.servlet.jsp.JspException;
