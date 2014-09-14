@@ -1,10 +1,10 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="m" uri="http://www.example.com/mytags" %>
 
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8"/>
     <title>Home page</title>
   </head>
   <body>
@@ -14,5 +14,5 @@
       <li><a href="dispatcher.do?tagName=printBody">printBody demo</a></li>
       <li><a href="dispatcher.do?tagName=movieDetails">movieDetails demo</a></li>
     </ul>
-</body>
+  </body>
 </html>
