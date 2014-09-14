@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="m" uri="http://www.example.com/mytags" %>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,13 +9,10 @@
   </head>
   <body>
     <h1>This is the home page of our application</h1>
-    <p><m:myTag /></p>
-    <p>
-      <ul>
-        <m:printBody start="1" end="5">
-          <li>Somewhere over the rainbow....</li>
-        </m:printBody>
-      </ul>
-    </p>
+    <ul>
+      <li><a href="dispatcher.do?tagName=myTag">myTag demo</a></li>
+      <li><a href="dispatcher.do?tagName=printBody">printBody demo</a></li>
+      <li><a href="dispatcher.do?tagName=movieDetails">movieDetails demo</a></li>
+    </ul>
 </body>
 </html>

@@ -9,29 +9,29 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * @author shamim
  */
 public class Movie {
-  public enum Category {ACTION, DRAMA, SCIFI}
+  public enum Genre {ACTION, DRAMA, SCIFI}
   
   private final String title;
-  private final Category category;
+  private final Genre genre;
   
-  public Movie(String title, Category category) {
+  public Movie(String title, Genre genre) {
     this.title = Objects.requireNonNull(title);
-    this.category = Objects.requireNonNull(category);
+    this.genre = Objects.requireNonNull(genre);
   }
   
    public String getTitle() {
     return title;
   }
 
-  public Category getCategory() {
-    return category;
+  public Genre getGenre() {
+    return genre;
   }
   
   @Override
   public String toString() {
     ToStringBuilder builder = new ToStringBuilder(ToStringStyle.MULTI_LINE_STYLE);
     builder.append("title", title)
-           .append("category", category);
+           .append("genre", genre);
     return builder.toString();
   }
 }

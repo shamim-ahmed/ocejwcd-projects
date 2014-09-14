@@ -25,4 +25,20 @@
       <rtexprvalue>true</rtexprvalue>
     </attribute>
   </tag>
+  
+  <tag>
+    <name>movieDetails</name>
+    <tag-class>edu.buet.cse.ocejwcd.proj02.handler.MovieDetailsHandler</tag-class>
+    <body-content>scriptless</body-content>
+    <attribute>
+      <name>var</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>movies</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
 </taglib>
