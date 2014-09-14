@@ -13,7 +13,6 @@
   </description>
 
   <properties>
-    <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -21,7 +20,7 @@
     <dependency>
       <groupId>javax</groupId>
       <artifactId>javaee-web-api</artifactId>
-      <version>6.0</version>
+      <version>7.0</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
@@ -31,13 +30,10 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.5.1</version>
+        <version>3.1</version>
         <configuration>
           <source>1.8</source>
           <target>1.8</target>
-          <compilerArguments>
-            <endorseddirs>${endorsed.dir}</endorseddirs>
-          </compilerArguments>
         </configuration>
       </plugin>
       <plugin>
@@ -45,34 +41,8 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>2.1.1</version>
         <configuration>
-          <failOnMissingWebXml>false</failOnMissingWebXml>
           <warName>ocejwcd-proj01</warName>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <version>2.1</version>
-        <executions>
-          <execution>
-            <phase>validate</phase>
-            <goals>
-              <goal>copy</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${endorsed.dir}</outputDirectory>
-              <silent>true</silent>
-              <artifactItems>
-                <artifactItem>
-                  <groupId>javax</groupId>
-                  <artifactId>javaee-endorsed-api</artifactId>
-                  <version>6.0</version>
-                  <type>jar</type>
-                </artifactItem>
-              </artifactItems>
-            </configuration>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>
