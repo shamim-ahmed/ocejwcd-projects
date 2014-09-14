@@ -11,6 +11,7 @@
     <h1>This is the home page of our application</h1>
     <ul>
       <li><a href="dispatcher.do?tagName=myTag">myTag demo</a></li>
+      <li><a href="dispatcher.do?tagName=myTag2">myTag2 demo</a></li>
       <li><a href="dispatcher.do?tagName=printBody">printBody demo</a></li>
       <li><a href="dispatcher.do?tagName=movieDetails">movieDetails demo</a></li>
     </ul>

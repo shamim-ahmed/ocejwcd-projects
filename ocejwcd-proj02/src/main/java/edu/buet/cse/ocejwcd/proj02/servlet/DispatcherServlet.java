@@ -27,6 +27,9 @@ public class DispatcherServlet extends HttpServlet {
       case "myTag":
         dispatcher = request.getRequestDispatcher("/WEB-INF/templates/myTagDemo.jsp");
         break;
+      case "myTag2":
+        dispatcher = request.getRequestDispatcher("/WEB-INF/templates/myTag2Demo.jsp");
+        break;
       case "printBody":
         dispatcher = request.getRequestDispatcher("/WEB-INF/templates/printBodyDemo.jsp");
         break;

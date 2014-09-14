@@ -10,6 +10,12 @@
     <body-content>empty</body-content>
   </tag>
   
+   <tag>
+    <name>mytag2</name>
+    <tag-class>edu.buet.cse.ocejwcd.proj02.handler.MyTag2</tag-class>
+    <body-content>tagdependent</body-content>
+  </tag>
+  
   <tag>
     <name>printBody</name>
     <tag-class>edu.buet.cse.ocejwcd.proj02.handler.PrintBodyHandler</tag-class>
