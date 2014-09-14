@@ -19,5 +19,7 @@
         ${myText}
       </m:toUpperCase>
     </div>
+    
+    <%@include file="common/footer.jspf"%>
   </body>
 </html>

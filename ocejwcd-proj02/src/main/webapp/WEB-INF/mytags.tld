@@ -63,4 +63,16 @@
       <rtexprvalue>true</rtexprvalue>
     </attribute>
   </tag>
+  
+  <tag>
+    <name>myParentTag</name>
+    <tag-class>edu.buet.cse.ocejwcd.proj02.handler.MyParentTagHandler</tag-class>
+    <body-content>scriptless</body-content>
+  </tag>
+  
+  <tag>
+    <name>myChildTag</name>
+    <tag-class>edu.buet.cse.ocejwcd.proj02.handler.MyChildTagHandler</tag-class>
+    <body-content>scriptless</body-content>
+  </tag>
 </taglib>

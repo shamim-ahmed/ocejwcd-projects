@@ -41,6 +41,9 @@ public class DispatcherServlet extends HttpServlet {
       case "toUpperCase":
         dispatcher = request.getRequestDispatcher("/WEB-INF/templates/toUpperCaseDemo.jsp");
         break;
+      case "myParentTag":
+        dispatcher = request.getRequestDispatcher("/WEB-INF/templates/myParentTagDemo.jsp");
+        break;
       default:
         dispatcher = request.getRequestDispatcher("/index.jsp");
         break;

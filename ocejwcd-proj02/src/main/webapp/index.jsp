@@ -15,6 +15,7 @@
       <li><a href="dispatcher.do?tagName=printBody">printBody demo</a></li>
       <li><a href="dispatcher.do?tagName=movieDetails">movieDetails demo</a></li>
       <li><a href="dispatcher.do?tagName=toUpperCase">toUpperCase demo</a></li>
+      <li><a href="dispatcher.do?tagName=myParentTag">myParentTag demo</a></li>
     </ul>
   </body>
 </html>
