@@ -38,6 +38,9 @@ public class DispatcherServlet extends HttpServlet {
         request.setAttribute("movies", movies);
         dispatcher = request.getRequestDispatcher("/WEB-INF/templates/movieDetailsDemo.jsp");
         break;
+      case "toUpperCase":
+        dispatcher = request.getRequestDispatcher("/WEB-INF/templates/toUpperCaseDemo.jsp");
+        break;
       default:
         dispatcher = request.getRequestDispatcher("/index.jsp");
         break;

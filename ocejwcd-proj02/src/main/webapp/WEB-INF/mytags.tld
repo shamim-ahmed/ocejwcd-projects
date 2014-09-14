@@ -47,4 +47,20 @@
       <rtexprvalue>true</rtexprvalue>
     </attribute>
   </tag>
+  
+  <tag>
+    <name>toUpperCase</name>
+    <tag-class>edu.buet.cse.ocejwcd.proj02.handler.ToUpperCaseHandler</tag-class>
+    <body-content>scriptless</body-content>
+    <attribute>
+      <name>var</name>
+      <required>true</required>
+      <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>message</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
 </taglib>
