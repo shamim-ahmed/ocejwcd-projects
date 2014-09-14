@@ -13,5 +13,7 @@
     <p>
       <m:myTag/>
     </p>
+    
+    <%@include file="common/footer.jspf"%>
   </body>
 </html>

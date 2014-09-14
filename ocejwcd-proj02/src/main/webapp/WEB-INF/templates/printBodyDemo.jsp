@@ -15,5 +15,7 @@
         <li>Somewhere over the rainbow...</li>
       </m:printBody>
     </ul>
+    
+    <%@include file="common/footer.jspf"%>
   </body>
 </html>

@@ -10,11 +10,13 @@
   <body>
     <h1>movieDetails demo</h1>
     
-    <table>
+    <table border="1">
       <tr><th>Title</th><th>Genre</th></tr>
       <m:movieDetails var="movie" movies="${requestScope.movies}">
         <tr><td>${movie.title}</td><td>${movie.genre}</td></tr>
       </m:movieDetails>
     </table>
+    
+    <%@include file="common/footer.jspf"%>
   </body>
 </html>
