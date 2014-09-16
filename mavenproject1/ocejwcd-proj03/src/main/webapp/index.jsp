@@ -11,5 +11,7 @@
     
     <p><a href="includeTrial.jsp">include trial</a></p>
     <p><a href="forwardTrial.jsp">forward trial</a></p>
+    <p><a href="${pageContext.request.contextPath}/delegate.do">Dispatch by URL</a></p>
+    <p><a href="${pageContext.request.contextPath}/delegate.do?useName=true">Dispatch by name</a></p>
   </body>
 </html>
