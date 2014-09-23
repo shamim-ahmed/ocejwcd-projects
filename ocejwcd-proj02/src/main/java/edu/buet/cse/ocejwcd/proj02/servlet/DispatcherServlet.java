@@ -21,25 +21,22 @@ public class DispatcherServlet extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response) 
   throws ServletException, IOException {
     String tagName = request.getParameter("tagName");
+    String jspName = getJspName(tagName);
     RequestDispatcher dispatcher = null;
     
     switch (tagName) {
       case "myTag":
-        dispatcher = request.getRequestDispatcher("/WEB-INF/templates/myTagDemo.jsp");
-        break;
       case "myTag2":
-        dispatcher = request.getRequestDispatcher("/WEB-INF/templates/myTag2Demo.jsp");
-        break;
       case "printBody":
-        dispatcher = request.getRequestDispatcher("/WEB-INF/templates/printBodyDemo.jsp");
-        break;
+      case "toUpperCase":
+      case "myParentTag":
+      case "skipPageTag":
+        dispatcher = request.getRequestDispatcher(jspName);
+        break;  
       case "movieDetails":
         List<Movie> movies = MovieProvider.getMovies();
         request.setAttribute("movies", movies);
-        dispatcher = request.getRequestDispatcher("/WEB-INF/templates/movieDetailsDemo.jsp");
-        break;
-      case "toUpperCase":
-        dispatcher = request.getRequestDispatcher("/WEB-INF/templates/toUpperCaseDemo.jsp");
+        dispatcher = request.getRequestDispatcher(jspName);
         break;
       default:
         dispatcher = request.getRequestDispatcher("/index.jsp");
@@ -47,5 +44,9 @@ public class DispatcherServlet extends HttpServlet {
     }
     
     dispatcher.forward(request, response);
+  }
+  
+  private String getJspName(String tagName) {
+    return String.format("/WEB-INF/templates/%sDemo.jsp", tagName);
   }
 }

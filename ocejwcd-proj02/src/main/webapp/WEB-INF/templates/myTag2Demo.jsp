@@ -15,5 +15,7 @@
         The message is: ${message}
       </m:mytag2>
     </p>
+    
+    <%@include file="common/footer.jspf"%>
   </body>
 </html>
