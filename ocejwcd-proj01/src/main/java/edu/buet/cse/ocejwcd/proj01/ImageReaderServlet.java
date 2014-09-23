@@ -11,25 +11,25 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Declare a servlet with only its logical name using annotations
- * 
+ *
  * @author shamim
  */
 @WebServlet(name = "imageReader")
 public class ImageReaderServlet extends HttpServlet {
+
   @Override
-  protected void doGet(HttpServletRequest request, HttpServletResponse response) 
-  throws ServletException, IOException {
+  protected void doGet(HttpServletRequest request, HttpServletResponse response)
+      throws ServletException, IOException {
     response.setContentType("image/jpeg");
-    
-    InputStream in = getServletContext().getResourceAsStream("/WEB-INF/images/orion.jpg");
-    OutputStream out = response.getOutputStream();
-    byte[] buffer = new byte[1024];
-    int n;
-    
-    while ((n = in.read(buffer)) != -1) {
-      out.write(buffer, 0, n);
+
+    try (InputStream in = getServletContext().getResourceAsStream("/WEB-INF/images/orion.jpg");
+         OutputStream out = response.getOutputStream()) {
+      byte[] buffer = new byte[1024];
+      int n;
+
+      while ((n = in.read(buffer)) != -1) {
+        out.write(buffer, 0, n);
+      }
     }
-    
-    out.flush();
   }
 }
