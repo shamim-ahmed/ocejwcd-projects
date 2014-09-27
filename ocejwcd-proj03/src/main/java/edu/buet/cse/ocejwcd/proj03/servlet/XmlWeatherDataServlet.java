@@ -14,10 +14,10 @@ import javax.servlet.http.HttpServletResponse;
  * 
  * @author shamim
  */
-@WebServlet(name = "weatherServlet", 
-            urlPatterns="/weather.do",
+@WebServlet(name = "xmlWeatherData", 
+            urlPatterns="/xml-weather-data",
             asyncSupported = true)
-public class WeatherServlet extends HttpServlet {
+public class XmlWeatherDataServlet extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {

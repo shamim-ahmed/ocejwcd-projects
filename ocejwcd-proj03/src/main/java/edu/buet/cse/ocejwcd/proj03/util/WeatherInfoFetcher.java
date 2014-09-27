@@ -14,13 +14,45 @@ import javax.servlet.http.HttpServletResponse;
  * @author shamim
  */
 public class WeatherInfoFetcher implements Runnable {
-
+  public enum ContentType {
+    XML() {
+      @Override
+      public String getPathToResource() {
+        return "/WEB-INF/data/forecast.xml";
+      }
+      
+      @Override
+      public String toString() {
+        return "application/xml";
+      }
+    }, 
+    JSON() {
+      @Override
+      public String getPathToResource() {
+        return "/WEB-INF/data/forecast.json";
+      }
+      
+      @Override
+      public String toString() {
+        return "application/json";
+      }
+    };
+    
+    public abstract String getPathToResource();
+  }
+  
   private final AsyncContext asyncContext;
   private final ServletContext servletContext;
-
+  private final ContentType contentType;
+  
   public WeatherInfoFetcher(AsyncContext asyncContext, ServletContext servletContext) {
+    this(asyncContext, servletContext, ContentType.XML);
+  }
+
+  public WeatherInfoFetcher(AsyncContext asyncContext, ServletContext servletContext, ContentType contentType) {
     this.asyncContext = Objects.requireNonNull(asyncContext);
     this.servletContext = Objects.requireNonNull(servletContext);
+    this.contentType = Objects.requireNonNull(contentType);
   }
 
   @Override
@@ -33,7 +65,7 @@ public class WeatherInfoFetcher implements Runnable {
 
     String result = getWeatherData();
     HttpServletResponse response = (HttpServletResponse) asyncContext.getResponse();
-    response.setContentType("application/xml");
+    response.setContentType(contentType.toString());
 
     try (PrintWriter out = response.getWriter()) { 
       out.write(result);
@@ -48,7 +80,7 @@ public class WeatherInfoFetcher implements Runnable {
     String result = "";
     ByteArrayOutputStream out = new ByteArrayOutputStream();
 
-    try (InputStream in = servletContext.getResourceAsStream("/WEB-INF/data/forecast.xml")) {
+    try (InputStream in = servletContext.getResourceAsStream(contentType.getPathToResource())) {
       byte[] buffer = new byte[1024];
       int n;
 

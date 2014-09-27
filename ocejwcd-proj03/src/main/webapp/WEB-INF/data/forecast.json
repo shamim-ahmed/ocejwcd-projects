@@ -1,0 +1,39 @@
+{ 
+  "coord": {
+    "lon": 85.17,
+    "lat": 26.68
+  },
+  "sys": {
+    "message": 0.1784,
+    "country": "IN",
+    "sunrise": 1411517326,
+    "sunset": 1411560826
+  },
+  "weather": [{
+      "id": 802,
+      "main": "Clouds",
+      "description": "scattered clouds",
+      "icon": "03n"
+    }],
+  "base": "cmc stations",
+  "main": {
+    "temp": 299.893,
+    "temp_min": 299.893,
+    "temp_max": 299.893,
+    "pressure": 1014.03,
+    "sea_level": 1020.14,
+    "grnd_level": 1014.03,
+    "humidity": 89
+  },
+  "wind": {
+    "speed": 3.76,
+    "deg": 114.502
+  },
+  "clouds": {
+    "all": 36
+  },
+  "dt": 1411568253,
+  "id": 1273043,
+  "name": "Dhaka",
+  "cod": 200
+}
