@@ -55,7 +55,8 @@ public class WeatherInfoFetcher implements Runnable {
   private final AsyncContext asyncContext;
   private final ServletContext servletContext;
   private final ContentType contentType;
-  
+  private boolean invokeComplete = true;
+
   public WeatherInfoFetcher(AsyncContext asyncContext, ServletContext servletContext) {
     this(asyncContext, servletContext, ContentType.XML);
   }
@@ -64,6 +65,14 @@ public class WeatherInfoFetcher implements Runnable {
     this.asyncContext = Objects.requireNonNull(asyncContext);
     this.servletContext = Objects.requireNonNull(servletContext);
     this.contentType = Objects.requireNonNull(contentType);
+  }
+  
+  public boolean isInvokeComplete() {
+    return invokeComplete;
+  }
+
+  public void setInvokeComplete(boolean invokeComplete) {
+    this.invokeComplete = invokeComplete;
   }
 
   @Override
@@ -76,15 +85,20 @@ public class WeatherInfoFetcher implements Runnable {
 
     String result = getWeatherData();
     HttpServletResponse response = (HttpServletResponse) asyncContext.getResponse();
-    response.setContentType(contentType.toString());
+    
+    if (response != null) {
+      response.setContentType(contentType.toString());
 
-    try (PrintWriter out = response.getWriter()) { 
-      out.write(result);
-    } catch (IOException ex) {
-      servletContext.log("Error while sending back forecast to the client", ex);
+      try (PrintWriter out = response.getWriter()) {
+        out.write(result);
+      } catch (IOException ex) {
+        servletContext.log("Error while sending back forecast to the client", ex);
+      }
+
+      if (invokeComplete) {
+        asyncContext.complete();
+      }
     }
-
-    asyncContext.complete();
   }
 
   private String getWeatherData() {
