@@ -3,3 +3,4 @@ nb-configuration.xml
 *.class
 
 
+/ocejwcd-proj04/ExoticServlet/nbproject/private/

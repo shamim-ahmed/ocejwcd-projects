@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>ocejwcd-proj04</artifactId>
+    <groupId>edu.buet.cse</groupId>
+    <version>1.0</version>
+  </parent>
+
+  <groupId>edu.buet.cse</groupId>
+  <artifactId>ocejwcd-proj04-webapp</artifactId>
+  <version>1.0</version>
+  <packaging>war</packaging>
+
+  <name>ocejwcd-proj04-webapp</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+    
+  <dependencies>
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-web-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <scope>compile</scope>
+    </dependency>
+    
+    <!-- project artifacts -->
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>ocejwcd-proj04-listeners</artifactId>
+      <version>${project.version}</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>ocejwcd-proj04-servlets</artifactId>
+      <version>${project.version}</version>
+      <scope>compile</scope>
+    </dependency>    
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.3</version>
+        <configuration>
+          <warName>${project.parent.artifactId}</warName>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
