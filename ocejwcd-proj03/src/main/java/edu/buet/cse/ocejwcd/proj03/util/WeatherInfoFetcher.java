@@ -36,6 +36,17 @@ public class WeatherInfoFetcher implements Runnable {
       public String toString() {
         return "application/json";
       }
+    },
+    Text() {
+      @Override
+      public String getPathToResource() {
+        return "/WEB-INF/data/forecast.txt";
+      }
+      
+      @Override
+      public String toString() {
+        return "text/plain";
+      }
     };
     
     public abstract String getPathToResource();
