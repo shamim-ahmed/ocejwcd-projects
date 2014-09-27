@@ -17,13 +17,13 @@ public class CustomAsyncListener implements AsyncListener {
   @Override
   public void onStartAsync(AsyncEvent event) throws IOException {
     logger.info("Async request started");
-    logger.info("Supplied request: " + event.getSuppliedRequest());
-    logger.info("Supplied response: " + event.getSuppliedResponse());
   } 
   
   @Override
   public void onComplete(AsyncEvent event) throws IOException {
     logger.info("Async request completed");
+    logger.info("Supplied request: " + event.getSuppliedRequest());
+    logger.info("Supplied response: " + event.getSuppliedResponse());
   }
 
   @Override

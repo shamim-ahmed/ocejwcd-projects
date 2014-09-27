@@ -24,7 +24,7 @@ public class JsonWeatherDataServlet extends HttpServlet {
   throws ServletException, IOException {
     AsyncContext asyncContext = request.startAsync();
     AsyncListener listener = asyncContext.createListener(CustomAsyncListener.class);
-    asyncContext.addListener(listener, request, response);
+    asyncContext.addListener(listener);
     
     WeatherInfoFetcher infoFetcher = new WeatherInfoFetcher(asyncContext, getServletContext(), WeatherInfoFetcher.ContentType.JSON);
     asyncContext.start(infoFetcher);
